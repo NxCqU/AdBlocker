@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube & Twitch AdBlocker",
+  "version": "1.0",
+  "description": "Blockiert Werbung auf YouTube und Twitch.",
+  "permissions": ["storage", "activeTab", "declarativeNetRequest"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.twitch.tv/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*", "*://*.twitch.tv/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AdBlocker"
+  }
+}
